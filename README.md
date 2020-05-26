@@ -1,4 +1,4 @@
-# Spring Data R2DBC H2 Kotlin Sample
+# Spring Data R2DBC Kotlin Sample
 Application using Reactive Spring Boot Data with R2dbc and Kotlin.
 
 ## Compatibility
