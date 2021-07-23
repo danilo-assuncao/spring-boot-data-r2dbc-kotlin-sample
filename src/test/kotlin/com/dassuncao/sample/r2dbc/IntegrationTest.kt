@@ -1,6 +1,7 @@
 package com.dassuncao.sample.r2dbc
 
 import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.TestInstance
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -18,7 +19,7 @@ abstract class IntegrationTest {
     @Autowired
     lateinit var database: DatabaseClient
 
-    @BeforeAll
+    @BeforeEach
     fun setUp() {
         Hooks.onOperatorDebug()
         val statements: List<String> = listOf(
