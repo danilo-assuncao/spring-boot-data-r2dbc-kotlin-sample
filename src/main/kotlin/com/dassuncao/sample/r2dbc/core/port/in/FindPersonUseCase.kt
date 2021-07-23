@@ -1,6 +1,6 @@
-package com.dassuncao.sample.r2dbc.application.port.input
+package com.dassuncao.sample.r2dbc.core.port.`in`
 
-import com.dassuncao.sample.r2dbc.application.domain.Person
+import com.dassuncao.sample.r2dbc.core.domain.Person
 import reactor.core.publisher.Flux
 
 interface FindPersonUseCase {
