@@ -41,7 +41,7 @@ class FindPersonServiceTest(
                 id = 1,
                 name = name,
                 lastName = people[0].lastName,
-                age = 17
+                age = 12
             ),
             Person(
                 id = 2,
