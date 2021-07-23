@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.3.0.RELEASE"
-	id("io.spring.dependency-management") version "1.0.9.RELEASE"
-	kotlin("jvm") version "1.3.72"
-	kotlin("plugin.spring") version "1.3.72"
+	id("org.springframework.boot") version "2.5.3"
+	id("io.spring.dependency-management") version "1.0.11.RELEASE"
+	kotlin("jvm") version "1.5.21"
+	kotlin("plugin.spring") version "1.5.21"
 }
 
 group = "com.dassuncao.sample.r2dbc"
@@ -14,6 +14,8 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 repositories {
 	mavenCentral()
 }
+
+val mockkVersion = "1.10.6"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
@@ -29,6 +31,8 @@ dependencies {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
 	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("io.mockk:mockk:$mockkVersion")
+
 }
 
 tasks.withType<Test> {

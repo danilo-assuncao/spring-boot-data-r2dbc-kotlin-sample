@@ -1,4 +1,4 @@
-package com.dassuncao.sample.r2dbc.adapter.output.persistence
+package com.dassuncao.sample.r2dbc.adapter.out.persistence
 
 import org.springframework.data.r2dbc.repository.Query
 import org.springframework.data.repository.reactive.ReactiveCrudRepository

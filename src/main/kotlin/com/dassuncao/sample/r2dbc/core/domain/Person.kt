@@ -1,4 +1,4 @@
-package com.dassuncao.sample.r2dbc.application.domain
+package com.dassuncao.sample.r2dbc.core.domain
 
 data class Person(
 

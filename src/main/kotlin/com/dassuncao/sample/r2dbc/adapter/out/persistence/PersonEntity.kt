@@ -1,4 +1,4 @@
-package com.dassuncao.sample.r2dbc.adapter.output.persistence
+package com.dassuncao.sample.r2dbc.adapter.out.persistence
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table

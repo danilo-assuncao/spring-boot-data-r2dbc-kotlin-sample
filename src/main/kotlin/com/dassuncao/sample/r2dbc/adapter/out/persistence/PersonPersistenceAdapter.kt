@@ -1,6 +1,6 @@
-package com.dassuncao.sample.r2dbc.adapter.output.persistence
+package com.dassuncao.sample.r2dbc.adapter.out.persistence
 
-import com.dassuncao.sample.r2dbc.application.port.output.PersonPersistencePort
+import com.dassuncao.sample.r2dbc.core.port.out.PersonPersistencePort
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Flux
 

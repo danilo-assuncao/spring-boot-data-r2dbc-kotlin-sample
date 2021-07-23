@@ -1,6 +1,6 @@
-package com.dassuncao.sample.r2dbc.application.port.output
+package com.dassuncao.sample.r2dbc.core.port.out
 
-import com.dassuncao.sample.r2dbc.adapter.output.persistence.PersonEntity
+import com.dassuncao.sample.r2dbc.adapter.out.persistence.PersonEntity
 import reactor.core.publisher.Flux
 
 interface PersonPersistencePort {

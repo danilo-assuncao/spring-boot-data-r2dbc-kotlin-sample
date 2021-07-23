@@ -5,14 +5,15 @@ import org.junit.jupiter.api.TestInstance
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Profile
-import org.springframework.data.r2dbc.core.DatabaseClient
+import org.springframework.r2dbc.core.DatabaseClient
 import reactor.core.publisher.Hooks
+import reactor.kotlin.test.test
 import reactor.test.StepVerifier
 
 @SpringBootTest
 @Profile("test")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-abstract class AbstractTest {
+abstract class IntegrationTest {
 
     @Autowired
     lateinit var database: DatabaseClient
@@ -26,10 +27,10 @@ abstract class AbstractTest {
         )
 
         statements.forEach {
-            database.execute(it)
+            database.sql(it)
                     .fetch()
                     .rowsUpdated()
-                    .`as`<StepVerifier.FirstStep<Int>> { publisher -> StepVerifier.create(publisher) }
+                    .test()
                     .expectNextCount(1)
                     .verifyComplete()
         }
