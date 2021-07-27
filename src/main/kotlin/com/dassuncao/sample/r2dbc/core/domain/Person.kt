@@ -2,7 +2,7 @@ package com.dassuncao.sample.r2dbc.core.domain
 
 data class Person(
 
-        val id: Long?,
+        val id: Long? = null,
 
         val name: String,
 

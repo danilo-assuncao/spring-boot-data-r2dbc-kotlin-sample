@@ -3,13 +3,15 @@ package com.dassuncao.sample.r2dbc.core.service
 import com.dassuncao.sample.r2dbc.IntegrationTest
 import com.dassuncao.sample.r2dbc.core.domain.Person
 import com.dassuncao.sample.r2dbc.core.port.`in`.FindPersonUseCase
+import com.dassuncao.sample.r2dbc.core.port.`in`.SavePersonUseCase
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import reactor.kotlin.test.test
 
 class FindPersonServiceTest(
-    @Autowired private val findPersonUseCase: FindPersonUseCase
+    @Autowired private val findPersonUseCase: FindPersonUseCase,
+    @Autowired private val savePersonUseCase: SavePersonUseCase
 ) : IntegrationTest() {
 
     @Test
@@ -121,7 +123,7 @@ class FindPersonServiceTest(
     }
 
     private fun insertPerson(person: List<Person>) {
-        findPersonUseCase.saveAll(person)
+        savePersonUseCase.saveAll(person)
             .log("SaveAll")
             .test()
             .expectNextCount(2)
